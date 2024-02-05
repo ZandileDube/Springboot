@@ -1,0 +1,13 @@
+package com.example.demo.Student;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
+   //custom function to find user by email
+    Optional<Student> findStudentByEmail(String email);
+
+}
